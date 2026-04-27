@@ -11,9 +11,24 @@ public class BookingManager {
     }
 
     public boolean reserveTicket(String eventId, double amount) {
-      
-
-        
+        // US-02: Invalid input
+    if (eventId == null || amount <= 0) {
         return false;
     }
+        // US-03: Sold out
+    if (repository.isSoldOut(eventId)) {
+        return false;
+    }
+         // Payment
+    boolean paymentSuccess = paymentGateway.processPayment(amount);
+
+    if (!paymentSuccess) {
+        return false;
+    }
+        // US-01: Success
+    repository.saveBooking(eventId);
+    notificationService.sendConfirmation(eventId);
+
+    return true;
 }
+    }

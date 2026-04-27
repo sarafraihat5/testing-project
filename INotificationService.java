@@ -1,3 +1,3 @@
 public interface INotificationService {
-    void sendConfirmation(String message);
+    void sendConfirmation(String eventId);
 }
