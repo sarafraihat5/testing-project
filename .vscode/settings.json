@@ -1,5 +1,21 @@
 {
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib\\byte-buddy-1.18.8.jar",
+            "lib\\byte-buddy-agent-1.18.8.jar",
+            "lib\\junit-platform-console-standalone-1.10.2.jar",
+            "lib\\mockito-core-5.11.0 (1).jar",
+            "lib/byte-buddy-1.18.8.jar",
+            "lib/byte-buddy-agent-1.18.8.jar",
+            "lib/junit-platform-console-standalone-1.10.2.jar",
+            "lib/mockito-core-5.11.0 (1).jar"
+        ],
+        "exclude": [
+            "lib/junit-jupiter-api-5.10.2.jar",
+            "lib/junit-jupiter-engine-5.10.2.jar"
+        ]
+    },
+    "java.project.sourcePaths": [
+        "src"
     ]
 }
